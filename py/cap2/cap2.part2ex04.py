@@ -5,15 +5,14 @@ Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-a = 2
-b = 3
-c = -5
+import math
 
-delta = b**2 - 4 * a * c
+# DEFINIÇÕES DOS MÉTODOS
 
-print("delta =", delta)
+def calcAngulo(x1, y1, x2, y2):
+    resposta = math.atan((y2 - y1) / (x2 - x1))
+    return resposta
 
-raiz1 = (-b + (delta**0.5)) / (2 * a)
-raiz2 = (-b - (delta**0.5)) / (2 * a)
+# PROGRAMA PRINCIPAL
 
-print(f"raiz1 = {raiz1}\nraiz2 = {raiz2}")
+print(calcAngulo(0, 0, 2, 0), calcAngulo(0, 1, 2, 2))

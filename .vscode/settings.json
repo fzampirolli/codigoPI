@@ -32,5 +32,10 @@
   "files.associations": {
     "stdlib.h": "c",
     "myfila.h": "c"
-  }
+  },
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }

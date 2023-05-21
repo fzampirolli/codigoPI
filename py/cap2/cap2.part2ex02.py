@@ -5,15 +5,12 @@ Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-a = 2
-b = 3
-c = -5
+# DEFINIÇÕES DOS MÉTODOS
 
-delta = b**2 - 4 * a * c
+def calcDist(x, y):
+    resposta = (x**2 + y**2) ** 0.5
+    return resposta
 
-print("delta =", delta)
+# PROGRAMA PRINCIPAL
 
-raiz1 = (-b + (delta**0.5)) / (2 * a)
-raiz2 = (-b - (delta**0.5)) / (2 * a)
-
-print(f"raiz1 = {raiz1}\nraiz2 = {raiz2}")
+print(calcDist(1, 1), calcDist(2, 2))
