@@ -4,3 +4,8 @@ Author : Francisco de Assis Zampirolli
 Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
+
+soma = 0
+for i in range(2, 51):
+    soma += 1 / i
+print(soma)
