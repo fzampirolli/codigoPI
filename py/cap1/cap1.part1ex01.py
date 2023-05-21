@@ -5,4 +5,4 @@
    Language: Python
 '''
 
-print("Ola Mundo!!!")
+print("Alô mundo!")

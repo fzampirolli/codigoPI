@@ -1,21 +1,10 @@
-/* Copyright (C) 2022 Francisco de Assis Zampirolli - All Rights Reserved
+/* Copyright (C) 2022-2023 Francisco de Assis Zampirolli - All Rights Reserved
  * Author: Francisco de Assis Zampirolli
- * Purpose: Examples and some exercises from the Information Processing book
+ * Purpose: Examples and some exercises from the Information Processing book:
+ * https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao
  * Language: C
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>5.
  */
+
 #include <stdio.h>
 #include <math.h>
 
