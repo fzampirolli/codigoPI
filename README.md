@@ -10,6 +10,13 @@ Todo o conteúdo do livro (conceitos e **todos os exercícios** na linguagem de 
 
 Nas pastas c/cap* deste GitHub estão alguns exemplos e exercícios em C do livro. Porém, existe um conteúdo mais complento disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em adaptação, curso de [Programação Estruturada, oferta 2022.3](https://sites.google.com/site/fzampirolli/pe-2022-3).
 
+Para clonar essa pasta, seguir os passos em um console (instalar git, python e vscode antes):
+* git clone https://github.com/fzampirolli/codigoPI.git
+* cd codigoPI
+* pip install virtualenv
+* virtualenv -p python3 venv
+* source venv/bin/activate
+
 ## Capítulos do livro com Colabs:
 
 * Capítulo 1: Fundamentos
