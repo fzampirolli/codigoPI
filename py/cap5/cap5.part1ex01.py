@@ -1,32 +1,20 @@
 """
 Copyright(C) 2022 - 2023 Francisco de Assis Zampirolli - All Rights Reserved
-Author : Francisco de Assis Zampirolli
 Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-#include <stdio.h>
+import numpy as np  # muito útil para trabalhar com vetor!
 
-int main(void) {
-
-  // ENTRADA DE DADOS
-  int max = 100; // considerar sempre um número grande
-  int n, ra[max];     // aloca 100 ra's
-  char nome[max][40]; // aloca 100 nomes de até 40 caracteres cada
-
-  printf("Digite o numero de alunos: ");
-  scanf("%d", &n);
-  for (int i = 0; i < n; i++) {
-    printf("RA: ");
-    scanf("%d", &ra[i]);
-    printf("Nome: ");
-    scanf("%s", nome[i]); // ATENÇÃO: NÃO ACEITA NOME COM ESPAÇOS e NÃO USA &
-  }
-  // PROCESSAMENTO ?
-  // SAÍDA
-  printf("LISTA DE ALUNOS\nNúmero\t RA\t Nome\n");
-  for (int i = 0; i < n; i++) {
-    printf("%d\t %d\t %s\n", i + 1, ra[i], nome[i]);
-  }
-  return 0;
-}
+# ENTRADA DE DADOS
+n = int(input("Digite o numero de alunos:"))
+ra = np.zeros(n).astype(int)  # vetor de inteiros com n elementos
+nome = np.zeros(n).astype(str)  # vetor de strings com n elementos
+for i in range(n):
+    ra[i] = int(input("RA:"))
+    nome[i] = input("Nome:")
+# PROCESSAMENTO ?
+# SAÍDA DE DADOS
+print("LISTA DE ALUNOS\nNúmero\t RA\t Nome")
+for i in range(n):
+    print(i + 1, "\t", ra[i], "\t", nome[i])

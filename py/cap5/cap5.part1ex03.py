@@ -1,58 +1,42 @@
 """
 Copyright(C) 2022 - 2023 Francisco de Assis Zampirolli - All Rights Reserved
-Author : Francisco de Assis Zampirolli
 Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-#include <stdio.h>
-#include <stdlib.h>
+import numpy as np  # muito útil para trabalhar com vetor!
 
-int* leiaVetor(int n) {
-  int* v = malloc(sizeof(n));
-  for (int i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-  return v;
-}
 
-int main(void) {
+# MÉTODO(S)
+def leiaVetor(n):
+    v = np.zeros(n).astype(int)  # aloca vetor de inteiro com n elementos
+    for i in range(n):
+        v[i] = int(input())
+    return v
 
-  // ENTRADA DE DADOS
-  int n, * ras, * notas;   // variaveis de referência ras e notas
-  float media, somador = 0.0;
-  int contador = 0;
 
-  printf("Digite o numero de alunos: ");
-  scanf("%d", &n);
+# ENTRADA DE DADOS
+n = int(input("Digite o numero de alunos:"))
+print("Entre com " + str(n) + " RAs:")
+ras = leiaVetor(n)
+print("Entre com " + str(n) + " Notas:")
+notas = leiaVetor(n)
 
-  printf("RAs: ");
-  ras = leiaVetor(n);
+# PROCESSAMENTO
+somador = 0
+for i in range(n):
+    somador += notas[i]
+media = somador / n
+contador = 0
+for i in range(n):
+    if notas[i] >= media:
+        contador += 1
 
-  printf("Notas: ");
-  notas = leiaVetor(n);
-
-  // PROCESSAMENTO: soma, média e contador
-  for (int i = 0; i < n; i++) {
-    somador = somador + notas[i];   // soma
-  }
-  media = (float)somador / n;            // média
-
-  for (int i = 0; i < n; i++) {
-    if (notas[i] >= media) {        // conta alunos>=media
-      contador = contador + 1;
-    }
-  }
-  // SAÍDA DE DADOS
-  printf("Média da turma = %.1f\n", media);
-  printf("Número de alunos acima da média = %d\n", contador);
-  printf("LISTA DE ALUNOS ACIMA DA MÉDIA\nRA\t Nota\n");
-  for (int i = 0; i < n; i++) {
-    if (notas[i] >= media) {        // conta alunos>=media
-      printf("%d\t %d\n", ras[i], notas[i]);
-    }
-  }
-  free(ras);  // liberar memória alocado com malloc
-  free(notas);
-  return 0;
-}
+# SAÍDA DE DADOS
+print("Média da turma =", media)
+print("Número de alunos acima da média =", contador)
+print("LISTA DE ALUNOS ACIMA DA MÉDIA")
+print("RA\t Nota")
+for i in range(n):
+    if notas[i] >= media:
+        print(ras[i], "\t", notas[i])

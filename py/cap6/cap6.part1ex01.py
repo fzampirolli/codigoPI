@@ -1,67 +1,48 @@
 """
 Copyright(C) 2022 - 2023 Francisco de Assis Zampirolli - All Rights Reserved
-Author : Francisco de Assis Zampirolli
 Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-#include <stdio.h>
-#include <stdlib.h>  // malloc e free
+import numpy as np  # muito útil para trabalhar com vetor!
 
-int** leiaMatriz(int L, int C) {
-  int** m = (int**)malloc(L * sizeof(int*));
-  for (int i = 0; i < L; i++) {
-    m[i] = (int*)malloc(C * sizeof(int)); // for each row allocate C ints
-    for (int j = 0; j < C; j++) {
-      scanf("%d", &m[i][j]);
-    }
-  }
-  return m;
-}
 
-// you must supply the number of rows
-void free_matrix(int** m, int L) {
-  // first free each row
-  for (int i = 0; i < L; i++) {
-    free(m[i]);
-  }
+def leiaMatriz(L, C):
+    m = np.zeros((L, C)).astype(int)  # matriz de inteiro com Linhas x Colunas
+    for i in range(L):
+        for j in range(C):
+            m[i][j] = int(input())
+    return m
 
-  // Eventually free the memory of the pointers to the rows
-  free(m);
-}
 
-void escrevaMatriz(int** m, int L, int C) {
-  for (int i = 0; i < L; i++) {
-    for (int j = 0; j < C; j++) {
-      printf("%d\t", m[i][j]);
-    }
-    printf("\n");
-  }
-}
-int main(void) {
-  // ENTRADA DE DADOS
-  int L, C, ** m;   // variaveis de referência m
-  printf("Digite o número de alunos: ");
-  scanf("%d", &L);
+def escrevaMatriz(m):
+    s = ""  # existem várias forma de formatar uma matriz
+    for i in range(len(m)):
+        for j in range(len(m[0])):
+            s += str(m[i][j]) + "\t"
+        s += "\n"
+    print(s)
 
-  printf("Digite o número de avaliações: ");
-  scanf("%d", &C);
 
-  C = C + 1; // a primeira coluna é o RA do aluno
+def escrevaMatriz_v2(m):
+    for i in range(len(m)):
+        print(*m[i])
 
-  printf("Digite os elementos da matriz");
-  m = leiaMatriz(L, C);
 
-  // PROCESSAMENTO ?
+# ENTRADA DE DADOS
+L = int(input("Digite o numero de alunos:"))
+C = int(input("Digite o numero de avaliações:"))
+C = C + 1  # a primeira coluna é o RA do aluno
+m = leiaMatriz(L, C)
+# L,C = np.random.randint(2,10, size = 2) # INTERESSANTE para testar
+# print(L,C)
+# m = np.random.randint(10, size=(L,C))   # INTERESSANTE para testar
 
-  // SAÍDA DE DADOS
-  printf("\nLISTA DE ALUNOS vs Avaliações:\n");
-  printf("RA ");
-  for (int i = 0; i < C - 1; i++) {
-    printf("\t%d", (i + 1));
-  }
-  printf("\n");
-  escrevaMatriz(m, L, C);
-  free_matrix(m, L); // liberar memória alocado com malloc
-  return 0;
-}
+# PROCESSAMENTO ?
+# SAÍDA DE DADOS
+print("LISTA DE ALUNOS vs Avaliações:")
+s = "RA"
+for i in range(C - 1):
+    s += "\t" + str(i + 1)
+print(s)
+escrevaMatriz(m)

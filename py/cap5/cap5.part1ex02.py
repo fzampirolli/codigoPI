@@ -1,40 +1,32 @@
 """
 Copyright(C) 2022 - 2023 Francisco de Assis Zampirolli - All Rights Reserved
-Author : Francisco de Assis Zampirolli
 Purpose : Examples and some exercises from the Information Processing book
 Language : Python
 """
 
-#include <stdio.h>
+import numpy as np  # muito útil para trabalhar com vetor!
 
-int main(void) {
 
-  // ENTRADA DE DADOS
-  int max = 100; // número máximo de alunos
-  int n, ras[max], notas[max];   // variaveis de referência ras e notas
+# MÉTODO(S)
+def leiaVetor(n):
+    v = np.zeros(n).astype(int)  # aloca vetor de inteiro com n elementos
+    for i in range(n):
+        v[i] = int(input())
+    return v
 
-  printf("Digite o numero de alunos: \n");
-  scanf("%d", &n);
 
-  printf("RAs: \n");
-  for (int i = 0; i < n; i++) {
-    printf("RA %d: \n", i + 1);
-    scanf("%d", &ras[i]);
-  }
+# ENTRADA DE DADOS
+n = int(input("Digite o numero de alunos:"))
+print("Entre com " + str(n) + " RAs:")
+ras = leiaVetor(n)
+print("Entre com " + str(n) + " Notas:")
+notas = leiaVetor(n)
 
-  printf("Notas: \n");
-  for (int i = 0; i < n; i++) {
-    printf("Nota %d: \n", i + 1);
-    scanf("%d", &notas[i]);
-  }
+# PROCESSAMENTO
+# ?
 
-  // PROCESSAMENTO ?
-  // SAÍDA
-  printf("LISTA DE ALUNOS\nNúmero\t RA\t Nota\n");
-  for (int i = 0; i < n; i++) {
-    printf("%d\t %d\t %d\n", i + 1, ras[i], notas[i]);
-  }
-  //free(ras);   // liberar memória alocado com malloc
-  //free(notas);
-  return 0;
-}
+# SAÍDA DE DADOS
+print("LISTA DE ALUNOS")
+print("Número\t RA\t Nota")
+for i in range(n):
+    print(i + 1, "\t", ras[i], "\t", notas[i])
