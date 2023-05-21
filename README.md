@@ -8,7 +8,7 @@ Nas pastas py/cap* deste GitHub estão alguns exemplos e exercícios em Python d
 
 Todo o conteúdo do livro (conceitos e **todos os exercícios** na linguagem de programação Python) está explicado em vídeos na disciplina de [Processando a Informação, oferta 2023.2](https://sites.google.com/site/fzampirolli/pi-2023-2).
 
-Nas pastas c/cap* deste GitHub estão alguns exemplos e exercícios em C do livro. Porém, existe um conteúdo mais complento disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em adaptação conforme o andamento do curso de [Programação Estruturada, oferta 2022.3](https://sites.google.com/site/fzampirolli/pe-2022-3).
+Nas pastas c/cap* deste GitHub estão alguns exemplos e exercícios em C do livro. Porém, existe um conteúdo mais complento disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em adaptação, curso de [Programação Estruturada, oferta 2022.3](https://sites.google.com/site/fzampirolli/pe-2022-3).
 
 ## Capítulos do livro com Colabs:
 
